@@ -135,7 +135,7 @@ outerlierChk = False
 
 # 데이터 Insert
 def insert_process(tabel_name,df_final):
-    engine = create_engine('postgresql://postgres:nivuskorea032@nivusDS.iptime.org:35435/EH_SEWER')
+    engine = create_engine('postgresql://postgres:Passw0rd!!@192.168.3.222:5432/EH_SEWER')
     try:
         # 데이터프레임을 DB 테이블에 삽입
         df_final.to_sql(tabel_name, engine, if_exists='append', index=False)
@@ -166,7 +166,7 @@ logger.addHandler(file_handler) ## 핸들러 등록
 
 # 데이터 가져오기
 def fetch_data(sql_query):
-    engine = create_engine('postgresql://postgres:nivuskorea032@nivusDS.iptime.org:35435/EH_SEWER')
+    engine = create_engine('postgresql://postgres:Passw0rd!!@192.168.3.222:5432/EH_SEWER')
     try:
         logging.info('Start fetching data from database')
         df = pd.read_sql_query(sql_query, engine)
