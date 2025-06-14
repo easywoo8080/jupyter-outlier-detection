@@ -1,11 +1,13 @@
+from typing import Literal
 import numpy as np
 import pandas as pd
 from sklearn.impute import KNNImputer
 
+
 def knn_impute(
     df: pd.DataFrame,
     n_neighbors: int = 5,
-    weights: str = "uniform"
+    weights: Literal["uniform", "distance"] = "uniform",
 ) -> pd.DataFrame:
     """
     KNN 기반 결측치 보간 함수

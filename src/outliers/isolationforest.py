@@ -15,15 +15,15 @@ df = pd.DataFrame(X, columns=["x", "y"])
 model = IsolationForest(contamination=0.1, random_state=42)
 df["anomaly"] = model.fit_predict(df[["x", "y"]])
 
-# 이상치 값을 NaN으로 치환
-df.loc[df["anomaly"] == -1, ["x", "y"]] = np.nan
+# # 이상치 값을 NaN으로 치환
+# df.loc[df["anomaly"] == -1, ["x", "y"]] = np.nan
 
 
-# KNN으로 NaN 대체
-imputer = KNNImputer(n_neighbors=5)
-df_imputed = df.copy()
-df_imputed[["x", "y"]] = imputer.fit_transform(df_imputed[["x", "y"]])
-
+# # KNN으로 NaN 대체
+# imputer = KNNImputer(n_neighbors=5)
+# df_imputed = df.copy()
+# df_imputed[["x", "y"]] = imputer.fit_transform(df_imputed[["x", "y"]])
+0
 print(df["anomaly"].value_counts())  # 이상치와 정상치의 개수 출력
 # 시각화
 plt.figure(figsize=(8, 6))

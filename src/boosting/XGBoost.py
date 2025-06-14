@@ -38,7 +38,7 @@ def train_xgboost_classifier(
     random_state: int = 42,
     max_depth: int = 3,
     eta: float = 0.1,
-    num_round: int = 50
+    num_round: int = 50,
 ) -> float:
     """
     XGBoost 다중 클래스 분류 학습 및 평가 함수
@@ -76,12 +76,12 @@ def train_xgboost_classifier(
 
     # 하이퍼파라미터 설정
     params = {
-        'objective': 'multi:softmax',  # 다중 클래스 분류
-        'num_class': len(np.unique(y)),
-        'eval_metric': 'merror',       # 오류율 평가
-        'max_depth': max_depth,
-        'eta': eta,
-        'seed': random_state
+        "objective": "multi:softmax",  # 다중 클래스 분류
+        "num_class": len(np.unique(y)),
+        "eval_metric": "merror",  # 오류율 평가
+        "max_depth": max_depth,
+        "eta": eta,
+        "seed": random_state,
     }
 
     # 모델 학습
@@ -101,7 +101,7 @@ def train_xgboost_regressor(
     random_state: int = 42,
     max_depth: int = 3,
     eta: float = 0.1,
-    num_round: int = 50
+    num_round: int = 50,
 ) -> float:
     """
     XGBoost 회귀 학습 및 평가 함수
@@ -139,10 +139,10 @@ def train_xgboost_regressor(
 
     # 하이퍼파라미터 설정
     params = {
-        'objective': 'reg:squarederror',  # 회귀용 손실함수
-        'max_depth': max_depth,
-        'eta': eta,
-        'seed': random_state
+        "objective": "reg:squarederror",  # 회귀용 손실함수
+        "max_depth": max_depth,
+        "eta": eta,
+        "seed": random_state,
     }
 
     # 모델 학습
